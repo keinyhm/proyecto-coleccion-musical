@@ -1,6 +1,6 @@
 Colección Musical – Aplicación Modular
 
-Aplicación web desarrollada para la asignatura (nombre de la asignatura) cuyo objetivo es gestionar una colección musical personal. El proyecto incluye un backend en Node.js + Express + MongoDB Atlas y un frontend en React (Vite).
+Aplicación web desarrollada para la asignatura de Arquitecturas y Modelos para el Desarrollo Web Ágil cuyo objetivo es gestionar una colección musical personal. El proyecto incluye un backend en Node.js + Express + MongoDB Atlas y un frontend en React (Vite).
 
 Tecnologías utilizadas
 
