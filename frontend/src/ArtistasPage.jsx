@@ -65,34 +65,35 @@ export function ArtistasPage() {
     <div
       style={{
         minHeight: "100vh",
-        backgroundColor: "#f5eee5",
+        backgroundColor: "#1a1a1a",
         padding: "2rem 1rem",
         display: "flex",
         justifyContent: "center",
+        color: "white",
       }}
     >
       <div
         style={{
           width: "100%",
           maxWidth: "700px",
-          background: "white",
+          background: "#242424",
           padding: "2rem",
           borderRadius: "20px",
-          boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
         }}
       >
-        {/* TÍTULO */}
         <h1
           style={{
             marginTop: 0,
             marginBottom: "1.8rem",
             fontSize: "2.2rem",
+            color: "white",
           }}
         >
           Artistas
         </h1>
 
-        {/* FORMULARIO / FILTROS */}
+        {/* FORMULARIO */}
         <form
           onSubmit={handleSubmit}
           style={{
@@ -109,7 +110,9 @@ export function ArtistasPage() {
             style={{
               padding: "0.6rem 1rem",
               borderRadius: "12px",
-              border: "1px solid #ddd",
+              border: "1px solid #3a3a3a",
+              background: "#1e1e1e",
+              color: "white",
               width: "200px",
             }}
           />
@@ -120,7 +123,9 @@ export function ArtistasPage() {
             style={{
               padding: "0.6rem 1rem",
               borderRadius: "12px",
-              border: "1px solid #ddd",
+              border: "1px solid #3a3a3a",
+              background: "#1e1e1e",
+              color: "white",
             }}
           >
             <option value="banda">Banda</option>
@@ -134,12 +139,13 @@ export function ArtistasPage() {
             style={{
               padding: "0.6rem 1rem",
               borderRadius: "12px",
-              border: "1px solid #ddd",
+              border: "1px solid #3a3a3a",
+              background: "#1e1e1e",
+              color: "white",
               width: "180px",
             }}
           />
 
-          {/* BOTÓN AÑADIR */}
           <button
             type="submit"
             style={{
@@ -159,7 +165,7 @@ export function ArtistasPage() {
         </form>
 
         {/* LISTA */}
-        <ul style={{ paddingLeft: "0", fontSize: "1rem", listStyle: "none" }}>
+        <ul style={{ paddingLeft: 0, fontSize: "1rem", listStyle: "none" }}>
           {artistas.map((a) => (
             <li
               key={a._id}
@@ -168,11 +174,11 @@ export function ArtistasPage() {
                 alignItems: "center",
                 justifyContent: "space-between",
                 marginBottom: "0.8rem",
+                color: "white",
               }}
             >
               <span>
-                {a.nombre} {a.tipo ? `(${a.tipo})` : ""}{" "}
-                {a.pais ? `- ${a.pais}` : ""}
+                {a.nombre} {a.tipo ? `(${a.tipo})` : ""} {a.pais ? `- ${a.pais}` : ""}
               </span>
 
               <button
@@ -180,8 +186,7 @@ export function ArtistasPage() {
                   padding: "0.6rem 1.2rem",
                   borderRadius: "999px",
                   border: "none",
-                  background:
-                    "linear-gradient(135deg, #ef4444, #dc2626)", // rojo bonito
+                  background: "linear-gradient(135deg, #ef4444, #dc2626)",
                   color: "white",
                   fontWeight: 600,
                   fontSize: "0.9rem",

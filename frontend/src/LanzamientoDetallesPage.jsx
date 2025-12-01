@@ -1,4 +1,7 @@
-// frontend/src/LanzamientoDetallePage.jsx
+// src/LanzamientoDetallesPage.jsx
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 const lanzamientoMock = {
   titulo: "Random Access Memories",
   artista: "Daft Punk",
@@ -19,38 +22,53 @@ const lanzamientoMock = {
 
 const pillStyle = {
   fontSize: "0.8rem",
-  backgroundColor: "#f3e3d0",
+  backgroundColor: "#333",
   padding: "0.3rem 0.9rem",
   borderRadius: "999px",
+  color: "white",
 };
 
-export function LanzamientoDetallePage() {
+export function LanzamientoDetallesPage() {
   const lanzamiento = lanzamientoMock;
+  const navigate = useNavigate();
 
   return (
     <div
       style={{
         minHeight: "100vh",
-        backgroundColor: "#f5eee5",
+        backgroundColor: "#1a1a1a",
         fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
         padding: "2rem 1rem",
+        color: "white",
       }}
     >
-      {/* TARJETA */}
       <div
         style={{
           width: "100%",
           maxWidth: "480px",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#242424",
           borderRadius: "20px",
-          boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
           padding: "1.8rem 1.6rem 2.4rem",
         }}
       >
-        {/* Portada */}
+        <button
+          onClick={() => navigate(-1)}
+          style={{
+            background: "transparent",
+            border: "none",
+            color: "white",
+            fontSize: "1.3rem",
+            cursor: "pointer",
+            marginBottom: "0.8rem",
+          }}
+        >
+          ←
+        </button>
+
         <div style={{ textAlign: "center", marginBottom: "1.4rem" }}>
           <img
             src={lanzamiento.portadaUrl}
@@ -59,13 +77,12 @@ export function LanzamientoDetallePage() {
               width: "100%",
               maxWidth: "260px",
               borderRadius: "16px",
-              boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+              boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
               objectFit: "cover",
             }}
           />
         </div>
 
-        {/* Título + artista */}
         <h1
           style={{
             margin: 0,
@@ -78,14 +95,13 @@ export function LanzamientoDetallePage() {
         <p
           style={{
             margin: "0.3rem 0 1rem",
-            color: "#666",
+            color: "#c7c7c7",
             textAlign: "center",
           }}
         >
           {lanzamiento.artista} · {lanzamiento.anioLanzamiento}
         </p>
 
-        {/* Chips */}
         <div
           style={{
             display: "flex",
@@ -104,7 +120,6 @@ export function LanzamientoDetallePage() {
           ))}
         </div>
 
-        {/* Lista de pistas */}
         <h2
           style={{
             fontSize: "1.05rem",
@@ -128,7 +143,6 @@ export function LanzamientoDetallePage() {
           ))}
         </ol>
 
-        {/* Botón */}
         <div style={{ textAlign: "center" }}>
           <button
             style={{
@@ -136,8 +150,7 @@ export function LanzamientoDetallePage() {
               padding: "0.75rem 1.8rem",
               borderRadius: "999px",
               border: "none",
-              background:
-                "linear-gradient(135deg, #f97316, #ea580c)", // naranja bonito
+              background: "linear-gradient(135deg, #f97316, #ea580c)",
               color: "white",
               fontWeight: 600,
               fontSize: "0.95rem",
