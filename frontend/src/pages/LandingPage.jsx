@@ -2,9 +2,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+// ← IMPORTA LA IMAGEN ASÍ (esto es clave)
+import myVinylsLanding from "../assets/myVinylsLanding.png";  // ← Ruta relativa correcta
+
 const wrapper = {
   minHeight: "100vh",
-  backgroundColor: "#1a1a1a",           // 🔴 FONDO GRIS OSCURO
+  backgroundColor: "#1a1a1a",          
   display: "flex",
   justifyContent: "center",
   padding: "2rem 1rem",
@@ -15,7 +18,7 @@ const wrapper = {
 const card = {
   width: "100%",
   maxWidth: "900px",
-  backgroundColor: "#242424",           // tarjeta oscura
+  backgroundColor: "#242424",
   borderRadius: "20px",
   padding: "2rem",
   boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
@@ -34,7 +37,7 @@ const buttonPrimary = {
   padding: "0.75rem 1.8rem",
   borderRadius: "999px",
   border: "none",
-  background: "linear-gradient(135deg, #f97316, #ea580c)", // naranja
+  background: "linear-gradient(135deg, #f97316, #ea580c)",
   color: "white",
   fontWeight: 600,
   cursor: "pointer",
@@ -98,14 +101,30 @@ export default function LandingPage() {
             </p>
           </div>
 
+          {/* BANNER CON IMAGEN LOCAL */}
           <div
             style={{
               height: "260px",
-              background:
-                "linear-gradient(135deg, #43302b, #1e1e1e 40%, #f97316 110%)",
+              backgroundImage: `url(${myVinylsLanding})`,  // ← Ahora sí funciona
+              backgroundSize: "cover",
+              backgroundPosition: "center",
               borderRadius: "16px",
+              position: "relative",
+              overflow: "hidden",
             }}
-          />
+          >
+            {/* Overlay opcional para oscurecer un poco */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: "rgba(0, 0, 0, 0.3)",
+              }}
+            />
+          </div>
         </section>
       </div>
     </div>

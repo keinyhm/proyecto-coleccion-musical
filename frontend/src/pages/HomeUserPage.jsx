@@ -2,7 +2,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// ===== ESTILOS =====
+// ← AÑADE ESTO: importa tu imagen local
+import myVinylsBanner from "../assets/myVinylsHome.jpeg";  
+
 const wrapper = {
   minHeight: "100vh",
   backgroundColor: "#1a1a1a",
@@ -115,22 +117,37 @@ export default function HomeUserPage() {
           redescubre tus álbumes.
         </p>
 
-        {/* BANNER NARANJA */}
+        {/* BANNER CON TU IMAGEN LOCAL */}
         <div
           style={{
             height: "260px",
-            background:
-              "linear-gradient(135deg, #4b3d32, #1e1e1e 40%, #f97316 110%)",
+            backgroundImage: `url(${myVinylsBanner})`,  // ← Tu imagen local
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             borderRadius: "18px",
             position: "relative",
+            overflow: "hidden",
           }}
         >
+          {/* Overlay oscuro para que el botón se vea bien */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "rgba(0, 0, 0, 0.5)",
+            }}
+          />
+          
           <button
             style={{
               ...buttonPrimary,
               position: "absolute",
               right: "1rem",
               bottom: "1rem",
+              zIndex: 10,
             }}
             onClick={() => navigate("/explorar")}
           >
